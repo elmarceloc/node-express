@@ -12,7 +12,8 @@ app.use(express.json());
 // enable cors
 app.use(cors());
 
-app.get('/', () => app.use(express.static(dirname + '/public')));
+app.use(express.static("public"));
+
 app.use("/api", chatRouter);
 
 export default app;
