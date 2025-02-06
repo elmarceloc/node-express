@@ -3,7 +3,7 @@
 
 
 const heygen_API = {
-  apiKey: 'ODQ4OGMxOGM4MDg2NDk5YTk2NTg1NDY1ZTJiZGM4ZmEtMTczODgxMjIxMg==',
+  apiKey: 'MDQ5ODAxYmY5N2MyNGExNjg4ZWE1OWJjNzAxZTVlYjItMTczODg0NTE0Mg==',
   serverUrl: 'https://api.heygen.com',
 };
 
