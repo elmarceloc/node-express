@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { dirname } from 'path';
 
 import chatRouter from "./routes/chatRouter.js";
+import path from 'path';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.static("public"));
 
 app.get('/', function(req, res) {
-  res.sendfile(dirname + '/public/index.html');
+  res.sendfile(path.__dirname + '/public/index.html');
 });
 
 app.use("/api", chatRouter);
