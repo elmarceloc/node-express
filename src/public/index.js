@@ -305,20 +305,20 @@ function toggleMic() {
 
 recognition.onstart = () => {
   // Crear un mensaje temporal cuando comienza el reconocimiento
-  //tempMessage = addMessage("🎤 Escuchando...", true);
+  tempMessage = addMessage("🎤 Escuchando...", true);
   // Añadir clase especial para el mensaje de escucha
- //tempMessage.classList.add('listening-message');
+ tempMessage.classList.add('listening-message');
 };
 
 recognition.onresult = (event) => {
   const transcript = event.results[event.results.length - 1][0].transcript.trim();
   if (transcript) {
-    // Actualizar el mensaje temporal con el texto reconocido
-    if (tempMessage) {
-      tempMessage.textContent = transcript;
-      // Forzar que termine el reconocimiento actual para procesar este mensaje
-      recognition.stop();
-    }
+    // Se procesa el texto y se asigna al input del chat
+    const parsedText = parseMessage(transcript);
+    chatInput.value = parsedText;
+    handleSendMessage();
+    // Se detiene el reconocimiento para procesar este mensaje
+    recognition.stop();
   }
 };
 
@@ -328,19 +328,7 @@ function parseMessage(message){
 }
 
 recognition.onend = () => {
-  if (tempMessage) {
-    const finalText = tempMessage.textContent;
-    if (finalText && finalText !== "🎤 Escuchando...") {
-      const parsedText = parseMessage(finalText);
-      chatInput.value = parsedText;
-      handleSendMessage();
-      // Removemos el mensaje temporal actual
-      tempMessage.remove();
-      tempMessage = null;
-    }
-  }
-  
-  // Si todavía está en modo grabación, reiniciar inmediatamente el reconocimiento
+  // Si sigue en modo grabación, reiniciamos el reconocimiento
   if (isRecording) {
     setTimeout(() => {
       recognition.start();
