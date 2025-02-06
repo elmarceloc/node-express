@@ -8,16 +8,11 @@ const app = express();
 
 // parse json request body
 app.use(express.json());
-app.get('/', () => app.use(express.static(dirname + '/public')));
 
 // enable cors
 app.use(cors());
 
-// healthcheck endpoint
-app.get("/", (req, res) => {
-  res.status(200).send({ status: "ok" });
-});
-
+app.get('/', () => app.use(express.static(dirname + '/public')));
 app.use("/api", chatRouter);
 
 export default app;
