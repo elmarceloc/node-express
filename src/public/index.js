@@ -8,8 +8,8 @@ const heygen_API = {
 };
 
 // Configuración automática
-const AVATAR_ID = "73c84e2b886940099c5793b085150f2f";
-const VOICE_ID = "dbe43f2b612d4ffab71925ebf53a0b4f";
+const AVATAR_ID = "SilasHR_public";
+const VOICE_ID = "79f84ce83ec34e75b600deec4c5c9de6";
 
 // Elementos del DOM
 const statusElement = document.querySelector('#status');
