@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.static("public"));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.__dirname + '/public/index.html');
+  res.sendFile('/public/index.html');
 });
 
 app.use("/api", chatRouter);
