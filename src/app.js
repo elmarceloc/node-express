@@ -3,12 +3,13 @@ import cors from "cors";
 import morgan from "morgan";
 
 import * as middleware from "./utils/middleware.js";
-import chatRoute from "./routes/chatRoute.js";
+import chatRouter from "./routes/chatRouter.js";
 
 const app = express();
 
 // parse json request body
 app.use(express.json());
+app.get('/', () => app.use(express.static(__dirname + '/public')));
 
 // enable cors
 app.use(cors());
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
   res.status(200).send({ status: "ok" });
 });
 
-app.use("/api", chatRoute);
+app.use("/api", chatRouter);
 
 // custom middleware
 app.use(middleware.unknownEndpoint);

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <!-- Agregar overlay de inicio -->
+      <div id="startOverlay" class="start-overlay">
+        <button id="startButton" class="start-button">
+          <i class="fas fa-play"></i>
+          Iniciar Asistente
+        </button>
+      </div>
+
+      <div class="videoSectionWrap">
+        <div class="videoWrap">
+          <video id="mediaElement" class="videoEle show" autoplay></video>
+          <canvas id="canvasElement" class="videoEle hide"></canvas>
+        </div>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." />
+          <button id="sendBtn">Enviar</button>
+          <button id="voiceToggleBtn" class="mic-button">
+            <i class="fas fa-microphone"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <p id="status"></p>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

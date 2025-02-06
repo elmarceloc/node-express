@@ -8,7 +8,6 @@ if (process.env.NODE_ENV !== "production") {
   config();
 }
 const server = http.createServer(app);
-app.use(cors())
 
 const PORT = process.env.PORT || 3003;
 
