@@ -305,9 +305,9 @@ function toggleMic() {
 
 recognition.onstart = () => {
   // Crear un mensaje temporal cuando comienza el reconocimiento
-  tempMessage = addMessage("🎤 Escuchando...", true);
+ // tempMessage = addMessage("🎤 Escuchando...", true);
   // Añadir clase especial para el mensaje de escucha
- tempMessage.classList.add('listening-message');
+ //tempMessage.classList.add('listening-message');
 };
 
 recognition.onresult = (event) => {
