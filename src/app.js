@@ -8,7 +8,7 @@ const app = express();
 
 // parse json request body
 app.use(express.json());
-app.get('/', () => app.use(express.static(__dirname + '/public')));
+app.get('/', () => app.use(express.static(dirname + '/public')));
 
 // enable cors
 app.use(cors());
