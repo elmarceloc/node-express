@@ -244,7 +244,7 @@ async function handleICE(session_id, candidate) {
 
 async function talkToOpenAI(prompt) {
   try {
-    const response = await fetch(`https://nextjs-boilerplate-zeta-three-88.vercel.app/api/chat`, {
+    const response = await fetch(`/api/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt }),
