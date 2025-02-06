@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { dirname } from 'path';
 
 import chatRouter from "./routes/chatRouter.js";
 
